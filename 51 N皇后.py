@@ -7,7 +7,7 @@ class Solution(object):
         """
         result = [] # 存储最终结果的二维字符串数组
       
-        board = ['.' * for _ in range(n)] # 初始化棋盘
+        board = ['.' * n for _ in range(n)] # 初始化棋盘
         '''
         在Python中，通常使用 _ 作为一个临时变量名或占位符。
         它的含义是告诉读者，该变量的值在当前上下文中不会被使用，或者该变量的值不重要。
