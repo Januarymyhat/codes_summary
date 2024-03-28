@@ -28,7 +28,7 @@ class Solution(object):
                 chessboard[row] = chessboard[row][:col] + '.' + chessboard[row][col+1:]  # 回溯，撤销当前位置的皇后
 
 
-    def isValid(self, row, col, board):
+    def isValid(self, row:int, col:int, board:List[str]) -> bool:
          # 检查列
         for i in range(row):
             if board[i][col] == 'Q':
@@ -36,7 +36,7 @@ class Solution(object):
 
         # 检查 45 度角是否有皇后
         i,j = row-1, col-1
-        wile i >= 0 and j >=0:
+        while i >= 0 and j >=0:
             if board[i][j] == 'Q':
                 return False # 左上方向已经存在皇后，不合法
             i -=1
