@@ -23,6 +23,9 @@ class Solution(object):
         
         for col in range(n):
             if self.isValid(row, col, board):
+                chessboard[row] = chessboard[row][:col] + 'Q' + chessboard[row][col+1:]  # 放置皇后
+                self.backtracking(n, row + 1, chessboard, result)  # 递归到下一行
+                chessboard[row] = chessboard[row][:col] + '.' + chessboard[row][col+1:]  # 回溯，撤销当前位置的皇后
 
 
     def isValid(self, row, col, board):
