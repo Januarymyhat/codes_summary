@@ -3,7 +3,7 @@ white = list(map(int, input().split()))
 
 
 def convert_to_coords(coords):
-    return [(coords[i], coords[i + 1]) for i in range(0, len(coords), 2)]
+    return [(coords[i], coords[i + 1]) for i in range(0, len(coords), 2)]  # 开始 结束 步伐
 
 
 # 转换为坐标
