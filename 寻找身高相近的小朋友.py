@@ -9,18 +9,21 @@ H, N = map(int, input().split())
 '''
 heights = list(map(int, input().split()))
 
+
 def solution():
-    heights.sort(key=lambda a: (abs(a-H), a))
+    heights.sort(key=lambda a: (abs(a - H), a))
     return " ".join(map(str, heights))
+
 
 print(solution())
 
-    # key参数用于指定在进行比较之前 对每个列表元素调用的函数
-
-    '''
-        匿名函数 https://www.bilibili.com/video/BV1UN4y1u7nH/?spm_id_from=333.337.search-card.all.click&vd_source=f0f606a8cf11af341bd6b055e5e180c6
-        lambda x, y: x*y			# 函数输入是x和y，输出是它们的积x*y
-        lambda:None					# 函数没有输入参数，输出是None
-        lambda *args: sum(args)		# 输入是任意个数参数，输出是它们的和(隐性要求输入参数必须能进行算术运算)
-        lambda **kwargs: 1			# 输入是任意键值对参数，输出是1
-    '''
+'''
+    key参数用于指定在进行比较之前 对每个列表元素调用的函数
+    匿名函数 https://www.bilibili.com/video/BV1UN4y1u7nH/?spm_id_from=333.337.search-card.all.click&vd_source=f0f606a8cf11af341bd6b055e5e180c6
+    lambda x, y: x*y			# 函数输入是x和y，输出是它们的积x*y
+    lambda:None					# 函数没有输入参数，输出是None
+    lambda *args: sum(args)		# 输入是任意个数参数，输出是它们的和(隐性要求输入参数必须能进行算术运算)
+    lambda **kwargs: 1			# 输入是任意键值对参数，输出是1
+    
+    lambda 函数返回的元组 (abs(a-H), a)，列表 heights 将首先根据 abs(a-H) 的值进行排序（从小到大），然后在相同差值的情况下，根据原始的元素 a 的值进行排序（从小到大）
+'''
