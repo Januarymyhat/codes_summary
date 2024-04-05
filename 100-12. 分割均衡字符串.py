@@ -6,7 +6,7 @@ x_num = 0
 y_num = 0
 
 while pin < len(two_type_string):
-    if two_type_string[pin] == 'X':  # string[5]就是第五个字符，包括括号
+    if two_type_string[pin] == 'X':  # string[5]就是第五个字符，包括空格
         x_num += 1
     else:
         y_num += 1
