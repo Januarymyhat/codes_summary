@@ -39,7 +39,7 @@ for i in range(len(array)):
         elif i == len(array)-1:
             index.append(i)
             result.append(f"{index[0]}-{index[-1]}")
-            print("执行")
+            # print("执行")
         else:
             index.append(i)
             # print(f"index: {index}")
