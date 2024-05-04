@@ -15,7 +15,7 @@
 输出: [["a"]]
 '''
 class Solution:
-    def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
+    def groupAnagrams1(self, strs: List[str]) -> List[List[str]]:
         # 创建一个默认值为列表的字典
         # 当你访问字典中不存在的键时，会返回一个空列表作为默认值
         anagrams_dict = defaultdict(list)
@@ -29,3 +29,23 @@ class Solution:
         
         # 返回字典的值，即为分组后的字母异位词列表
         return list(anagrams_dict.values())
+
+    
+
+     # 相乘必定相同
+    def groupAnagrams2(self, strs: List[str]) -> List[List[str]]:
+        map = {
+            'a':2,'b':3,'c':5,'d':7,'e':11,'f':13,'g':17,'h':19,'i':23,'j':29,'k':31,'l':37,'m':41,
+            'n':43,'o':47,'p':53,'q':59,'r':61,'s':67,'t':71,'u':73,'v':79,'w':83,'x':89,'y':97,'z':101
+        }
+        resmap={}
+        reslist = []
+        for str in strs:
+            m = 1
+            for i in range(len(str)):
+                m*=map[str[i]]
+            if  not m in resmap:
+                resmap[m]=[]
+            resmap[m].append(str)
+        print(resmap.values())
+        return [j for j in resmap.values()]
