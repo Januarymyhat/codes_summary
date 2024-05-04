@@ -17,6 +17,7 @@
 class Solution:
     def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
         # 创建一个默认值为列表的字典
+        # 当你访问字典中不存在的键时，会返回一个空列表作为默认值
         anagrams_dict = defaultdict(list)
         
         # 遍历字符串数组
